@@ -1,8 +1,9 @@
 secret = 1987
-guess = int(raw_input("Bitte erraten Sie die geheime Zahl: "))
+guess = int(raw_input("Bitte erraten Sie die gemeine Zahl: "))
+
+while guess != secret:
+    print "Sorry  do it again"
+    guess = int(raw_input("Bitte erraten Sie die gemeine Zahl: "))
 
 if guess == secret:
-    print "Congratulations!! You won. :-) :-) "
-
-else:
-    print "Sorry, the number is not correct. Please try it again."
+    print "Congratulations!! You won. :-) :-)"

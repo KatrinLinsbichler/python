@@ -13,6 +13,13 @@ def seeallcars(carbook):
         print str(index) + ") " + str(car)
     print ""
 
+def saveallcars(carbook):
+    carbook_file = open("carbook.txt", "w+")
+    for index, car in enumerate(carbook):
+        carbook_file.write(str(index) + ") " + str(car) + "\n")
+    carbook_file.close()
+    print "cars saved in txt file"
+
 def addnewcar(carbook):
     carbook_temp = []
 
@@ -89,9 +96,10 @@ def main():
         print "c) edit general service date "
         print "d) add new vehicle(s) "
         print "e) delete a vehicle"
+        print "f) save carbook in txt file"
         print ""
 
-        userauswahl = raw_input("Please enter which option you want to choose (a, b, c, d, e): ")
+        userauswahl = raw_input("Please enter which option you want to choose (a, b, c, d, e, f): ")
 
         if userauswahl == "a":
             seeallcars(carbook)
@@ -107,6 +115,9 @@ def main():
 
         if userauswahl == "e":
             deletecar(carbook)
+
+        if userauswahl == "f":
+            saveallcars(carbook)
 
         weitereoption = raw_input("Do you want to do another thing? Press y for yes or any other letter for no: ")
         if weitereoption == "y":
